@@ -103,13 +103,23 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+import environ
+env = environ.Env() # set default values and casting
+environ.Env.read_env()
 
+import dj_database_url
+# # import env
+DATABASES={
+     'default' :  dj_database_url.parse('postgres://shrey:QVisCefMX1OZ0r7apZUS5AENe4yv7HKD@dpg-cjne1cmqdesc739hb7ug-a.singapore-postgres.render.com/portdb_nrrc')
+            }
+
+# Password validation
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
