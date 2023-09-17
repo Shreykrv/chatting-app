@@ -32,7 +32,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['www.squaak.net','squaak.net' , '127.0.0.1', 'localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://www.squaak.net','https://squaak.net', 'http://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['*','https://www.squaak.net','https://squaak.net', 'http://127.0.0.1']
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
